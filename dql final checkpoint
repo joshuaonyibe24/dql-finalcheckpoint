@@ -1,0 +1,21 @@
+producer(NumP,firstname,lastname,region)
+wine(NumW,category,year,degree,NumP)
+harvest(NumW,NumP,quantity)
+
+create table producer(
+	nump varchar(50) constraint pkey1 primary key,
+	firstname varchar(50),
+	lastname varchar(50),
+	region varchar(50)
+	
+)
+
+SELECT PRODUCER FROM PRODUCER ORDER BY FIRSTNAME, LASTNAME
+
+
+SELECT * FROM PRODUCER WHERE REGION = 'SOUSSE'
+selet numw from wine where category > 12
+
+select quantity,category from wine inner join numw on wine.numw = harvest.numw
+
+
