@@ -9,13 +9,36 @@ create table producer(
 	region varchar(50)
 	
 )
+ create table  harvest(
+ 	quantity varchar(50),
+ 	numw varchar(50),
+ 	nump varchar(50),
+ 	constraint  skey1 foreign key (numw )references wine(numw),
+ 	constraint skey2 foreign key (nump) references  producer(nump)
+
+ )
+ 
+create table wine (
+       numw varchar(50) constraint pkey2 primary key,
+       category varchar(50),
+       degree varchar(50),
+       nump varchar(50),
+       constraint skey2 foreign key(nump)reference producder(nump)
+ )
+       
+
 
 SELECT PRODUCER FROM PRODUCER ORDER BY FIRSTNAME, LASTNAME
 
 
 SELECT * FROM PRODUCER WHERE REGION = 'SOUSSE'
-selet numw from wine where category > 12
+
+select sum(quantity) from harvest where nump = 12
 
 select quantity,category from wine inner join numw on wine.numw = harvest.numw
 
+select firstname,lastname from producer inner join harvest on wine.numw = harvest.numw where region = 'sousse'
+and numw > 1 or quantity > 300 order by firstname, lastname
 
+
+select * from harvest inner join wine on harvest.numw = wine.numw where degree > 12 and nump = 24
