@@ -26,7 +26,7 @@ create table wine (
        constraint skey2 foreign key(nump)reference producder(nump)
  )
        
-
+select * from producer
 
 SELECT PRODUCER FROM PRODUCER ORDER BY FIRSTNAME, LASTNAME
 
