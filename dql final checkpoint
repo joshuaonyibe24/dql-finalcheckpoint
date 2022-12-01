@@ -41,4 +41,4 @@ select firstname,lastname from producer inner join harvest on wine.numw = harves
 and numw > 1 and quantity > 300 order by firstname, lastname
 
 
-select * from harvest inner join wine on harvest.numw = wine.numw where degree > 12 and nump = 24
+select numw from wine inner join harvest on wine.numw = harvest.numw where degree > 12 and nump = 24
