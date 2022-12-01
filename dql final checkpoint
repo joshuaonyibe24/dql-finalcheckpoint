@@ -35,7 +35,7 @@ SELECT * FROM PRODUCER WHERE REGION = 'SOUSSE'
 
 select sum(quantity) from harvest where nump = 12
 
-select quantity,category from wine inner join numw on wine.numw = harvest.numw
+select sum(quantity),category from harvest inner join wine on harvest.numw  =  wine.numw group by category
 
 select firstname,lastname from producer inner join harvest on wine.numw = harvest.numw where region = 'sousse'
 and numw > 1 or quantity > 300 order by firstname, lastname
